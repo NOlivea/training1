@@ -80,18 +80,14 @@ ggplot(data, aes(x = month_year_date)) +
 
 # Create a line ggplot with deaths vs. cases
 ggplot(data, aes(x = month_year_date)) +
-  geom_line(aes(y = coloncancercases), color = "blue", size = 3) +
-  geom_line(aes(y = coloncancerdeaths), color = "red", size = 3) +
+  geom_line(aes(y = coloncancercases), color = "blue", size = 2) +
+  geom_line(aes(y = coloncancerdeaths), color = "red", size = 2) +
   labs(title = "Colon Cancer Deaths vs Cases Over 12 Months",
        x = "Month",
        y = "Count",
        color = "Legend") +
   scale_color_manual(values = c("cases" = "blue", "deaths" = "red")) +
   theme_minimal()
-
-
-
-
 
 
 
