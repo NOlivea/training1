@@ -1,0 +1,26 @@
+names(data) <- c("id","period","code", "description","kidney.cases", "kidney.deaths", "breast.cases", "breast.deaths", "prostate.cases","prostate.deaths", "lung.cases", "lung.deaths","liver.cases", "liver.deaths", "colon.cases", "colon.deaths", "others.cases", "others.deaths")
+
+library(lubridate)
+
+# Convert 'period' to a date format
+data$period <- dmy(paste("01", data$period))
+
+# Now you can proceed with your ggplot code
+library(ggplot2)
+ggplot(data = data) + 
+  aes(x = period, y = breast.cases) +
+  geom_line(color = "red", size = 1) +
+  ggtitle("Breast Cancer Cases Over Time") +
+  xlab("Period") +
+  ylab("Number of Cases")
+
+
+
+ggplot(data = data) + 
+  aes(x = period, y = breast.cases) +
+  geom_line(color = "skyblue", linewdidth = 1) +  # Adjust color and size as needed
+  ggtitle("Breast Cancer Cases Over Time") +
+  xlab("Period") +  # Label for x-axis
+  ylab("Number of Cases")  # Label for y-axis
+
+
